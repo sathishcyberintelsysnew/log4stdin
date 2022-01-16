@@ -1,4 +1,4 @@
-package io.ajuvonen.log4stdin;
+package fi.ajuvonen.log4stdin;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
