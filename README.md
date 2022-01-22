@@ -4,13 +4,17 @@ This repository contains a Java application intentionally vulnerable to CVE-2021
 
 log4stdin is quite literally nothing more than an stdin-reader, input of which is fed into a vulnerable log4j instance. The project uses Maven artefacts log4j-api 2.14.1 and log4j-core 2.14.1.
 
+
 ## How to use?
 
-Use unix pipes for input. For example run `cat output.log | java -jar log4stdin.jar` to subject log entries of a given piece of software to an injectability treatment.
+Use Unix pipes for input. For example to subject log entries to an injectability treatment, run 
+
+```cat output.log | java -jar log4stdin.jar```
 
 log4stdin prints whatever is fed to stdin but does nothing to handle user input. Therefore it is suitable for reading log files, as exemplified above, or to be used with software requiring no user interaction.
 
 The contents of this repository are bound to be classified either as infected files or attempts of issuing malicious commands by AVs. It might be a good idea to exclude the target folder from AV scanning before cloning the repository. It might be an even better idea to try it out in a virtual environment with no network connections.
+
 
 ## What for?
 
@@ -20,40 +24,20 @@ Secondly, it is basically the "Hello World" of cybersec, written to underline bo
 
 Thirdly, it may be used to test if an AV solution is able to detect software exploiting CVE-2021-44832. log4stdin.java or log4stdin.jar might be flagged as Generic.Zojfor.G, for example.
 
+
 ## It's on you
 
 Anyway, whatever you decide to use this for makes you accountable for any consequences.
 
+
 ## Licenses
 
-log4stdin is unlicensed. It's not like there was much heavy lifting to do.
+### log4stdin
 
-### log4stdin (this repository)
+MIT license. Read more in LICENSE.md.
 
-This is free and unencumbered software released into the public domain.
+It's not like there was much heavy lifting to do though, and feel free to reproduce the thing on your own accord, and no-one's going to come chasing after you.
 
-Anyone is free to copy, modify, publish, use, compile, sell, or
-distribute this software, either in source code form or as a compiled
-binary, for any purpose, commercial or non-commercial, and by any
-means.
-
-In jurisdictions that recognize copyright laws, the author or authors
-of this software dedicate any and all copyright interest in the
-software to the public domain. We make this dedication for the benefit
-of the public at large and to the detriment of our heirs and
-successors. We intend this dedication to be an overt act of
-relinquishment in perpetuity of all present and future rights to this
-software under copyright law.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-
-For more information, please refer to <https://unlicense.org>
 
 ### Apache Log4j2
 
