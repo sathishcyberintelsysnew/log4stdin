@@ -1,6 +1,6 @@
 # log4stdin &mdash; log4shell injection for anything with stdout
 
-This repository contains a Java application intentionally vulnerable to CVE-2021-44832, colloquially known as log4shell.
+This repository contains a Java application intentionally vulnerable to CVE-2021-44228, colloquially known as log4shell.
 
 log4stdin is quite literally nothing more than an stdin-reader, input of which is fed into a vulnerable log4j instance. The project uses Maven artefacts log4j-api 2.14.1 and log4j-core 2.14.1.
 
@@ -8,8 +8,10 @@ log4stdin is quite literally nothing more than an stdin-reader, input of which i
 ## How to use?
 
 Use Unix pipes for input. For example to subject log entries to an injectability treatment, run 
-
 ```cat output.log | java -jar log4stdin.jar```
+
+Alternatively, for real time log reading, run
+```tail -f output.log | java -jar log4stdin.jar```
 
 log4stdin prints whatever is fed to stdin but does nothing to handle user input. Therefore it is suitable for reading log files, as exemplified above, or to be used with software requiring no user interaction.
 
