@@ -8,9 +8,11 @@ log4stdin is quite literally nothing more than an stdin-reader, input of which i
 ## How to use?
 
 Use Unix pipes for input. For example to subject log entries to an injectability treatment, run 
+
 ```cat output.log | java -jar log4stdin.jar```
 
 Alternatively, for real time log reading, run
+
 ```tail -f output.log | java -jar log4stdin.jar```
 
 log4stdin prints whatever is fed to stdin but does nothing to handle user input. Therefore it is suitable for reading log files, as exemplified above, or to be used with software requiring no user interaction.
@@ -24,7 +26,7 @@ Firsly, it may be used to explore the consequence of having a JNDI injection poi
 
 Secondly, it is basically the "Hello World" of cybersec, written to underline both the simplicity and the severity of the vulnerability.
 
-Thirdly, it may be used to test if an AV solution is able to detect software exploiting CVE-2021-44832. log4stdin.java or log4stdin.jar might be flagged as Generic.Zojfor.G, for example.
+Thirdly, it may be used to test if an AV solution is able to detect software exploiting CVE-2021-44228. log4stdin.java or log4stdin.jar might be flagged as Generic.Zojfor.G, for example.
 
 
 ## It's on you
